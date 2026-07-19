@@ -1,182 +1,80 @@
-# Uber-Eats-Bangalore-Restaurant-Intelligence-Decision-Support-Systems
-
-Uber-Eats-Bangalore-Restaurant-Intelligence-Decision-Support-System/
-
-│
-├── README.md
-├── requirements.txt
-├── Uber_Eats_data.csv
-├── orders.json
-│
-├── sql/
-│   ├── create_tables.sql
-│   ├── uber_eats.sql
-│   └── project_queries_Updated.sql
-│
-├── python/
-│   ├── data_loading.py
-│   └── load_to_mysql.py
-│
-└── streamlit/
-    ├── app.py
-    ├── database.py
-    ├── dashboard_questions.py
-    ├── business_questions.py
-    └── additional_questions.py
-
---> Important Notes: For Q3 questions, the dataset stores multiple cuisines in a single field, so popularity is measured based on cuisine combinations rather than individual cuisines.
-
 # 🍽️ Uber Eats Restaurant Intelligence & Decision Support System
 
 ## 📌 Project Overview
 
-The Uber Eats Restaurant Intelligence & Decision Support System is an interactive Business Intelligence dashboard developed using Python, MySQL, SQL, and Streamlit. The application analyzes restaurant and customer order data to generate meaningful business insights that help restaurants improve customer experience, pricing strategies, and operational decisions.
+This project analyzes Uber Eats Bangalore restaurant and order datasets using **Python**, **MySQL**, **SQL**, and **Streamlit** to generate business insights and support data-driven decision making.
 
-This project was developed as part of the **GUVI – HCL Capstone Project**.
+The dashboard allows users to filter restaurants, analyze customer orders, and answer important business questions using SQL queries.
 
 ---
 
-# 🎯 Project Objectives
+## 🎯 Project Objectives
 
 - Clean and preprocess restaurant and order datasets.
-- Store the cleaned data in a MySQL database.
-- Perform SQL-based business analysis.
+- Store cleaned data in MySQL.
+- Perform SQL analysis to answer business questions.
 - Build an interactive Streamlit dashboard.
-- Answer key business questions using SQL.
-- Support data-driven business decision making.
+- Provide decision-support insights for restaurant businesses.
 
 ---
 
-# 🗂 Dataset Information
-
-The project uses two datasets:
-
-### Restaurant Dataset
-
-Contains information such as:
-
-- Restaurant Name
-- Location
-- Cuisine
-- Restaurant Type
-- Online Ordering
-- Table Booking
-- Ratings
-- Votes
-- Approximate Cost for Two
-- Listed Category
-
-### Orders Dataset
-
-Contains information such as:
-
-- Order ID
-- Restaurant Name
-- Order Date
-- Order Value
-- Payment Method
-- Discount Used
-
----
-
-# 🛠 Technology Stack
+## 🛠 Technologies Used
 
 - Python
 - MySQL
 - SQL
-- Streamlit
 - Pandas
 - SQLAlchemy
 - PyMySQL
+- Streamlit
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```
 Uber_Eats_Project/
 
-│
-├── data/
-│ ├── restaurants.csv
-│ └── orders.csv
-│
-├── python/
-│ ├── data_loading.py
-│ └── load_to_mysql.py
-│
-├── sql/
-│ └── uber_eats.sql
-│
-├── streamlit/
-│ ├── app.py
-│ ├── database.py
-│ ├── dashboard_questions.py
-│ ├── business_questions.py
-│ └── additional_questions.py
-│
-├── README.md
-├── requirements.txt
+├── app.py
+├── database.py
+├── dashboard_questions.py
+├── business_questions.py
+├── additional_questions.py
+├── data_loading.py
+├── load_to_mysql.py
+├── create_tables.sql
+├── uber_eats.sql
+├── project_queries_Updated.sql
+├── Uber_Eats_data.csv
+├── orders.json
+└── README.md
 ```
 
 ---
 
-# ⚙️ Data Cleaning & Preprocessing
+## 📊 Dashboard Features
 
-The restaurant and order datasets were cleaned using Python.
+### Home Page
 
-Cleaning steps included:
-
-- Removing duplicate records
-- Handling missing values
-- Standardizing column names
-- Formatting numeric values
-- Preparing data for SQL insertion
+- Restaurant Count
+- Order Count
+- Location Count
+- Cuisine Count
 
 ---
 
-# 🗄 Database
+### Dashboard Filters
 
-The cleaned datasets were imported into MySQL.
-
-Database Name:
-
-```
-uber_eats
-```
-
-Tables:
-
-- restaurants
-- orders
-
----
-
-# 📊 Dashboard Features
-
-## 🏠 Home
-
-Displays:
-
-- Total Restaurants
-- Total Orders
-- Total Locations
-- Total Cuisines
-
----
-
-## 📋 Dashboard
-
-Restaurant Filters:
+Restaurant Filters
 
 - Location
 - Cuisine
 - Online Order
 - Table Booking
 - Minimum Rating
-- Maximum Cost for Two
+- Maximum Cost For Two
 
-Order Filters:
+Order Filters
 
 - Payment Method
 - Discount Used
@@ -184,78 +82,101 @@ Order Filters:
 
 ---
 
-## ❓ Business Questions
+## 📈 Business Analysis
 
-The dashboard answers **15 business questions**, including:
+The dashboard answers:
 
-- Restaurants by location
-- Online ordering analysis
-- Restaurant ratings
-- Customer votes
-- Cost analysis
-- Cuisine insights
-- Restaurant categories
+- 15 Business Questions
+- 10 Additional SQL Questions
+
+using optimized SQL queries.
 
 ---
 
-## 📈 Additional SQL Analysis
+---
 
-The application also answers **10 additional SQL questions**, including:
+## ⚠️ Important Notes
 
-- Payment method analysis
-- Average order value
-- Discount usage
-- Restaurant demand
+The restaurant dataset stores **multiple cuisines within a single `cuisines` column**. As a result, **Business Question Q3** analyzes the popularity of **cuisine combinations** (for example, *"North Indian, Chinese"* or *"Italian, Pizza"*) instead of individual cuisines. This design decision maintains the integrity of the original dataset and avoids altering the source data during preprocessing.
+
+---
+
+## Business Questions
+
+Examples include:
+
+- Top-rated restaurants
+- Restaurants with highest customer votes
+- Restaurants offering online ordering and table booking
 - Premium restaurants
-- Highly rated locations
+- Cost analysis
+- Customer ratings
+- Restaurant popularity
+
+---
+
+## Additional SQL Analysis
+
+Examples include:
+
+- Average order value by payment method
+- Most used payment method
+- Restaurant order frequency
 - Online ordering percentage
 - Table booking percentage
+- Premium restaurant analysis
+- Cuisine popularity
 
 ---
 
-# 💡 Key Business Insights
+## Database
 
-The dashboard helps businesses:
+Database Name
 
-- Identify high-performing restaurants
-- Analyze customer preferences
-- Understand payment behavior
-- Compare restaurant categories
-- Discover premium restaurant segments
-- Support expansion decisions
-- Evaluate pricing strategies
+```
+uber_eats
+```
+
+Tables
+
+- restaurants
+- orders
 
 ---
 
-# ▶️ How to Run
+## How to Run
 
-## Install Dependencies
+### Install Requirements
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Run Streamlit
+### Run Streamlit
 
 ```bash
-python -m streamlit run streamlit/app.py
+streamlit run app.py
 ```
 
 ---
 
-# 🚀 Future Enhancements
+## Output
 
-- Interactive charts using Plotly
-- Download reports to Excel
-- Search functionality
-- User authentication
-- Cloud deployment
-- Advanced analytics dashboard
+The application provides
+
+- Interactive Filters
+- KPI Dashboard
+- Business Insights
+- SQL Analysis
+- Data Tables
 
 ---
 
-# 👨‍💻 Developed By
+
+## Author
 
 **Kumaravel M**
 
-GUVI – HCL Capstone Project
+GUVI – HCL Mini Project
+
+
