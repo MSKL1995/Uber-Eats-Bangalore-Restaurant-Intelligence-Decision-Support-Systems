@@ -1,5 +1,28 @@
 # Uber-Eats-Bangalore-Restaurant-Intelligence-Decision-Support-Systems
 
+Uber-Eats-Bangalore-Restaurant-Intelligence-Decision-Support-System/
+│
+├── README.md
+├── requirements.txt
+├── Uber_Eats_data.csv
+├── orders.json
+│
+├── sql/
+│   ├── create_tables.sql
+│   ├── uber_eats.sql
+│   └── project_queries_Updated.sql
+│
+├── python/
+│   ├── data_loading.py
+│   └── load_to_mysql.py
+│
+└── streamlit/
+    ├── app.py
+    ├── database.py
+    ├── dashboard_questions.py
+    ├── business_questions.py
+    └── additional_questions.py
+
 --> Important Notes: For Q3 questions, the dataset stores multiple cuisines in a single field, so popularity is measured based on cuisine combinations rather than individual cuisines.
 
 # 🍽️ Uber Eats Restaurant Intelligence & Decision Support System
